@@ -1,20 +1,20 @@
 #include"Pair.h"
-Pair::Pair(double first, double second):whole{ first }, fractional{ second }{}
+Pair::Pair(double first, double second):first{ first }, second{ second }{}
 Pair::~Pair() = default;
-void Pair::setFirst(double first) { this->whole = first; }
-void Pair::setSecond(double second){ this->fractional = second; }
+void Pair::setFirst(double first) { this->first = first; }
+void Pair::setSecond(double second){ this->second = second; }
 bool Pair :: operator >(const Pair& Other)const{
-	if (whole == Other.whole)
-		return fractional > Other.fractional;
+	if (first == Other.first)
+		return second > Other.second;
 	else
-		return whole > Other.whole;
+		return first > Other.first;
 }
 bool Pair :: operator <(const Pair& Other)const {
-	if (whole == Other.whole)
-		return fractional < Other.fractional;
+	if (first == Other.first)
+		return second < Other.second;
 	else
-		return whole < Other.whole;
+		return first < Other.first;
 }
 bool Pair :: operator ==(const Pair& Other)const {
-	return fractional == Other.fractional && whole == Other.whole;
+	return second == Other.second && first == Other.first;
 }
