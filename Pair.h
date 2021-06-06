@@ -4,7 +4,7 @@
 */
 class Pair {
 private:
-	double whole, fractional;
+	double first, second;
 public:
 	/**
 	* \brief Конструктор по умолчанию
