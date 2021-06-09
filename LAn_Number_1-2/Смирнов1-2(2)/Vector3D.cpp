@@ -21,31 +21,19 @@ ostream& operator<<(ostream& out, Vector3D& vec)
 }
 Vector3D Vector3D::operator+(const Vector3D& other)
 {
-	Vector3D temp;
-	temp.x = this->x + other.x;
-	temp.y = this->y + other.y;
-	temp.z = this->z + other.z;
-	return temp;
+	return Vector3D(this->x + other.x, this->y + other.y, this->z + other.z);
 }
 Vector3D Vector3D::operator-(const Vector3D& other)
 {
-	Vector3D temp;
-	temp.x = this->x - other.x;
-	temp.y = this->y - other.y;
-	temp.z = this->z - other.z;
-	return temp;
+	return Vector3D(this->x - other.x, this->y - other.y, this->z - other.z);
 }
 Vector3D Vector3D::operator*(const double a)
 {
-	Vector3D temp;
-	temp.x = this->x * a;
-	temp.y = this->y * a;
-	temp.z = this->z * a;
-	return temp;
+	return Vector3D(this->x * a, this->y * a, this->z * a);
 }
 double Vector3D::operator*(const Vector3D& other)
 {
-	return this->x * other.x + this->y * other.y + this->z * other.z;
+	return this->x * other.x, this->y * other.y, this->z * other.z;
 }
 double Vector3D::get_vector_length() const
 {
@@ -65,7 +53,7 @@ double Vector3D::get_z()const
 }
 bool Vector3D::operator==(const Vector3D& other)
 {
-	if (this->get_vector_length() == other.get_vector_length())
+	if (fabs(this->get_vector_length() - other.get_vector_length()) < numeric_limits<double>::epsilon())
 	{
 		return true;
 	}
@@ -76,7 +64,7 @@ bool Vector3D::operator==(const Vector3D& other)
 }
 bool Vector3D::operator>(const Vector3D& other)
 {
-	if (this->get_vector_length() > other.get_vector_length())
+	if (get_vector_length() > other.get_vector_length())
 	{
 		return true;
 	}
@@ -87,7 +75,7 @@ bool Vector3D::operator>(const Vector3D& other)
 }
 bool Vector3D::operator<(const Vector3D& other)
 {
-	if (this->get_vector_length() < other.get_vector_length())
+	if (get_vector_length() < other.get_vector_length())
 	{
 		return true;
 	}
