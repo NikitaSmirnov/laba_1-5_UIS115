@@ -64,7 +64,7 @@ bool Vector3D::operator==(const Vector3D& other)
 }
 bool Vector3D::operator>(const Vector3D& other)
 {
-	if (get_vector_length() > other.get_vector_length())
+	if (this->get_vector_length() > other.get_vector_length())
 	{
 		return true;
 	}
@@ -75,7 +75,7 @@ bool Vector3D::operator>(const Vector3D& other)
 }
 bool Vector3D::operator<(const Vector3D& other)
 {
-	if (get_vector_length() < other.get_vector_length())
+	if (this->get_vector_length() < other.get_vector_length())
 	{
 		return true;
 	}
