@@ -8,24 +8,24 @@ int main() {
 	Pair1.setFirst(2); Pair1.setSecond(2);
 	Pair2.setFirst(2); Pair2.setSecond(2);
 	if (Pair1 > Pair2)
-		cout << "Ñ•ÐµÑ€Ð²Ð°Â¤ Ð¿Ð°Ñ€Ð° Ð±Ð¾Ð»ÑŒÑˆÐµ" << endl;
+		cout << "Ïåðâàÿ ïàðà áîëüøå" << endl;
 	else if (Pair1 < Pair2)
-		cout << "Â¬Ñ‚Ð¾Ñ€Ð°Â¤ Ð¿Ð°Ñ€Ð° Ð±Ð¾Ð»ÑŒÑˆÐµ" << endl;
+		cout << "Âòîðàÿ ïàðà áîëüøå" << endl;
 	else
-		cout << "Ñ•Ð°Ñ€Ñ‹ Ñ€Ð°Ð²Ð½Ñ‹" << endl;
+		cout << "Ïàðû ðàâíû" << endl;
 	try
 	{
 		Fraction Fraction1(1, 22);
 		Fraction Fraction2(1, 22);
 		if (Fraction1 > Fraction2)
-			cout << "Ñ•ÐµÑ€Ð²Ð°Â¤ Ð´Ñ€Ð¾Ð±ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐµ" << endl;
+			cout << "Ïåðâàÿ äðîáü áîëüøå" << endl;
 		else if (Fraction1 < Fraction2)
-			cout << "Â¬Ñ‚Ð¾Ñ€Ð°Â¤ Ð´Ñ€Ð¾Ð±ÑŒ Ð±Ð¾Ð»ÑŒÑˆÐµ" << endl;
+			cout << "Âòîðàÿ äðîáü áîëüøå" << endl;
 		else
-			cout << "Æ’Ñ€Ð¾Ð±Ð¸ Ñ€Ð°Ð²Ð½Ñ‹" << endl;
+			cout << "Äðîáè ðàâíû" << endl;
 	}
 	catch (double)
 	{
-		cout << "Æ’Ñ€Ð¾Ð±ÑŒ Ð²Ð²ÐµÐ´ÐµÐ½Ð° Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾" << endl;
+		cout << "Äðîáü ââåäåíà íåïðàâèëüíî" << endl;
 	}
 }

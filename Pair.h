@@ -1,48 +1,56 @@
 #pragma once
+#include <cmath>
+#include <limits>
+using namespace std;
 /**
-* \brief РљР»Р°СЃСЃ РїР°СЂР° С‡РёСЃРµР»
+* \brief Класс пара чисел
 */
 class Pair {
 private:
-	double whole, fractional;
+	double first, second;
 public:
 	/**
-	* \brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	* \brief Конструктор по умолчанию
 	*/
 	explicit Pair() = default;
 
 	/**
-	* \brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	* \brief Конструктор с параметрами
 	*/
-	explicit Pair(double first, double second);
+	explicit Pair(const double first, const double second);
 
 	/**
-	* \brief Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	* \brief Деструктор по умолчанию
 	*/
 	~Pair();
 
 	/**
-	* \brief РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РїРѕР»СЏ first
+	* \brief Метод изменения поля first
 	*/
-	void setFirst(double first);
+	void setFirst(const double first);
 
 	/**
-	* \brief РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ РїРѕР»СЏ second
+	* \brief Метод изменения поля second
 	*/
-	void setSecond(double second);
+	void setSecond(const double second);
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° <
+	* \brief Перегрузка оператора <
 	*/
 	bool operator <(const Pair& Other)const;
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° >
+	* \brief Перегрузка оператора >
 	*/
 	bool operator >(const Pair& Other)const;
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° ==
+	* \brief Перегрузка оператора ==
 	*/
 	bool operator ==(const Pair& Other)const;
+
+	/**
+	* \brief Проверка на равенство переменных double
+	*/
+	bool IsEqual(const double frist, const double second)const;
 };

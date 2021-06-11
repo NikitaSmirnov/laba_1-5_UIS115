@@ -1,39 +1,44 @@
 #pragma once
 #include"Pair.h"
 /**
-* \brief РљР»Р°СЃСЃ РґСЂРѕР±СЊ, РЅР°СЃР»РµРґРѕРІР°РЅРЅС‹Р№ РѕС‚ Pair
+* \brief Класс дробь, наследованный от Pair
 */
 class Fraction : public Pair {
 private:
 	double whole, fractional;
 public:
 	/**
-	* \brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	* \brief Конструктор по умолчанию
 	*/
 	explicit Fraction() = default;
 
 	/**
-	* \brief РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	* \brief Конструктор с параметрами
 	*/
 	explicit Fraction(double whole, double fractional);
 
 	/**
-	* \brief Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	* \brief Деструктор по умолчанию
 	*/
 	~Fraction();
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° <
+	* \brief Перегрузка оператора <
 	*/
 	bool operator <(const Fraction& Other)const;
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° >
+	* \brief Перегрузка оператора >
 	*/
 	bool operator >(const Fraction& Other)const;
 
 	/**
-	* \brief РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° ==
+	* \brief Перегрузка оператора ==
 	*/
 	bool operator ==(const Fraction& Other)const;
+	
+	/**
+	* \brief Проверка на равенство переменных double
+	*/
+	bool IsEqual(const double whole, const double fractional)const;
 };
